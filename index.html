@@ -30,64 +30,58 @@
             background: rgba(0, 0, 0, 0.92);
         }
 
+        /* Top bar – sleek single line */
         .top-bar {
             background: #050708;
             border-bottom: 1px solid rgba(0, 180, 210, 0.45);
-            padding: 10px 18px;
+            padding: 8px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
             gap: 12px;
-            min-height: 68px;
-        }
-
-        .top-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-wrap: wrap;
-            flex: 2 1 auto;
+            min-height: 52px;
         }
 
         .brand-micro {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 1.2px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             background: rgba(0, 180, 210, 0.12);
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-left: 2px solid #00b8d4;
             color: #ccf4ff;
+            white-space: nowrap;
         }
         .brand-micro span { color: #00d4ff; }
 
+        /* Node info group – all in one row */
         .node-status-area {
             display: flex;
-            flex-direction: column;
-            gap: 4px;
+            align-items: center;
+            gap: 12px;
             background: rgba(0, 0, 0, 0.55);
-            padding: 4px 12px 4px 10px;
+            padding: 4px 10px;
             border-radius: 6px;
             border-left: 1px solid #00b8d4;
+            flex-wrap: wrap;
         }
         .node-line {
             display: flex;
             align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 6px;
         }
         .node-label-light {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             color: #96c7d4;
         }
         .node-code-value {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             background: #0c0f12;
-            padding: 2px 8px;
+            padding: 2px 6px;
             letter-spacing: 1px;
             color: #8aeaff;
             border: 0.5px solid rgba(0, 200, 230, 0.6);
@@ -96,31 +90,30 @@
             background: transparent;
             border: none;
             color: #80d4e6;
-            font-size: 0.8rem;
-            width: 28px;
-            height: 28px;
+            font-size: 0.7rem;
+            width: 26px;
+            height: 26px;
             border-radius: 4px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .icon-subtle:active { background: rgba(0, 180, 210, 0.2); }
-
         .stats-line {
             display: flex;
-            gap: 20px;
-            font-size: 0.65rem;
+            gap: 12px;
+            font-size: 0.6rem;
             color: #9eb3ba;
         }
-        .stats-line i { font-size: 0.7rem; margin-right: 4px; color: #6dbbc9; }
-        .stat-digit { color: #bbefff; font-weight: 500; margin-left: 3px; }
+        .stats-line i { font-size: 0.65rem; margin-right: 3px; color: #6dbbc9; }
+        .stat-digit { color: #bbefff; font-weight: 500; margin-left: 2px; }
 
+        /* Disconnect button – always icon + optional text */
         .disconnect-btn {
             background: transparent;
             border: 1px solid #ff7b6e;
             color: #ff9f8f;
-            padding: 7px 14px;
+            padding: 5px 10px;
             font-family: monospace;
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -128,24 +121,44 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             border-radius: 4px;
+            white-space: nowrap;
         }
-        .disconnect-btn:active { background: rgba(255, 90, 70, 0.2); }
+        .disconnect-btn i {
+            font-size: 0.85rem;
+        }
+        /* On very small screens, hide text */
+        @media (max-width: 550px) {
+            .disconnect-btn .btn-text {
+                display: none;
+            }
+            .disconnect-btn {
+                padding: 5px 8px;
+            }
+            .node-status-area {
+                gap: 8px;
+                padding: 3px 8px;
+            }
+            .stats-line {
+                gap: 8px;
+            }
+        }
 
         .main-content {
             flex: 1;
             overflow-y: auto;
-            padding: 20px 18px;
+            padding: 16px 12px;
             scrollbar-width: thin;
         }
 
+        /* Onboarding panel */
         .onboarding-panel {
             max-width: 460px;
             margin: 5vh auto;
             background: rgba(8, 10, 12, 0.92);
             border: 1px solid rgba(0, 180, 210, 0.45);
-            padding: 28px 24px;
+            padding: 28px 20px;
         }
         .section-head {
             font-size: 0.7rem;
@@ -153,18 +166,18 @@
             color: #2fc7e0;
             text-transform: uppercase;
             border-left: 2px solid #00b8d4;
-            padding-left: 12px;
-            margin-bottom: 1.5rem;
+            padding-left: 10px;
+            margin-bottom: 1.2rem;
         }
         .btn-primary {
             background: #00b8d4;
             border: none;
             color: #000;
             font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 1.8px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            height: 52px;
+            height: 48px;
             width: 100%;
             cursor: pointer;
             font-family: monospace;
@@ -178,7 +191,7 @@
         .btn-primary:active { background: #2ad4f0; transform: scale(0.98); }
         .terminal-input {
             width: 100%;
-            height: 52px;
+            height: 48px;
             background: #07090b;
             border: 1px solid rgba(0, 180, 210, 0.6);
             color: #ddf4ff;
@@ -186,8 +199,8 @@
             text-align: center;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            margin: 1rem 0;
+            font-size: 0.8rem;
+            margin: 0.8rem 0;
         }
         .terminal-input:focus { border-color: #2ad4f0; outline: none; }
         .divider-light {
@@ -227,42 +240,43 @@
         }
         .await-heading {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             border: 0.5px solid #2ad4f0;
             background: #030608;
-            padding: 8px 24px;
+            padding: 6px 20px;
             color: #b4f0ff;
         }
         .waiting-code-card {
             background: #030507;
-            padding: 14px 20px;
+            padding: 12px 16px;
             border: 1px solid rgba(0, 180, 210, 0.6);
             margin: 12px 0;
         }
         .waiting-code-number {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: 3px;
             color: #7ee6ff;
             background: #0a0f12;
-            padding: 5px 12px;
+            padding: 4px 10px;
             font-family: monospace;
         }
         .copy-waiting-link {
             background: transparent;
             border: 1px solid #2ad4f0;
             color: #9edcec;
-            padding: 7px 20px;
-            font-size: 0.7rem;
-            margin-top: 12px;
+            padding: 6px 16px;
+            font-size: 0.65rem;
+            margin-top: 10px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
+        /* Chat area */
         .chat-area {
             display: flex;
             flex-direction: column;
@@ -271,37 +285,37 @@
         .secure-tag {
             align-self: center;
             background: rgba(0, 30, 35, 0.7);
-            padding: 4px 14px;
-            font-size: 0.6rem;
-            letter-spacing: 1.5px;
+            padding: 3px 12px;
+            font-size: 0.55rem;
+            letter-spacing: 1px;
             color: #7ad4e6;
             border-radius: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
         .messages-container {
             flex: 1;
             overflow-y: auto;
             background: #020304;
             border: 1px solid rgba(0, 180, 210, 0.2);
-            padding: 14px;
-            margin-bottom: 18px;
+            padding: 12px;
+            margin-bottom: 12px;
             border-radius: 4px;
         }
         .message-item {
             margin-bottom: 1rem;
         }
         .msg-meta {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: #5fb0c0;
             text-transform: uppercase;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .msg-body {
             background: #0d1215;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-left: 2px solid #2ad4f0;
             color: #e3f0f5;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             max-width: 88%;
             word-break: break-word;
         }
@@ -309,7 +323,22 @@
             border-left-color: #f0b27a;
             background: #151e22;
         }
-        /* Image message styles */
+        /* Image placeholder */
+        .image-placeholder {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a1217;
+            border-radius: 6px;
+            width: 200px;
+            height: 150px;
+            color: #6dbbc9;
+            font-size: 0.7rem;
+            gap: 8px;
+        }
+        .image-placeholder i {
+            font-size: 1.5rem;
+        }
         .msg-image {
             max-width: 250px;
             max-height: 250px;
@@ -318,44 +347,28 @@
             margin-top: 5px;
             border: 1px solid rgba(0, 180, 210, 0.3);
         }
-        .msg-image-preview {
-            max-width: 200px;
-            max-height: 150px;
-            border-radius: 6px;
-            margin-top: 5px;
-        }
-        .image-placeholder {
-            background: #0a1217;
-            padding: 12px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.7rem;
-            color: #6dbbc9;
-        }
         .bottom-bar {
             background: #07090c;
             border-top: 1px solid rgba(0, 180, 210, 0.5);
-            padding: 10px 18px;
+            padding: 8px 12px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
         }
         .input-group {
             flex: 1;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
         .chat-input-field {
             flex: 1;
             background: #0b0f12;
             border: 1px solid rgba(0, 180, 210, 0.5);
-            height: 50px;
-            padding: 0 16px;
+            height: 44px;
+            padding: 0 12px;
             font-family: monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #eef5f8;
         }
         .chat-input-field:focus { border-color: #2ad4f0; outline: none; }
@@ -363,19 +376,18 @@
             background: #1a2a30;
             border: 1px solid #2ad4f0;
             color: #7ee6ff;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 4px;
-            transition: 0.1s;
         }
         .image-attach-btn:active { background: #2ad4f0; color: #000; }
         .send-action {
-            width: 54px;
-            height: 50px;
+            width: 48px;
+            height: 44px;
             background: #00b8d4;
             border: none;
             color: #000;
@@ -395,10 +407,10 @@
         .msg-sending-indicator {
             opacity: 0.6;
             font-style: italic;
-            font-size: 0.65rem;
-            margin-left: 8px;
+            font-size: 0.6rem;
+            margin-left: 6px;
         }
-        /* Modal for full image view */
+        /* Image modal */
         .image-modal {
             position: fixed;
             top: 0;
@@ -417,28 +429,46 @@
             max-height: 90%;
             object-fit: contain;
         }
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+        .loader-spinner {
+            font-size: 2.5rem;
+            color: #2ad4f0;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
 <div class="app-shell">
     <div class="top-bar">
-        <div class="top-bar-left">
-            <div class="brand-micro"><span>ZYRO</span>_CHAT</div>
-            <div id="nodeStatusArea" class="node-status-area hidden">
-                <div class="node-line">
-                    <span class="node-label-light">NODE :</span>
-                    <span id="activeNodeCodeDisplay" class="node-code-value">——</span>
-                    <button id="copyNodeCodeBtn" class="icon-subtle" title="copy code"><i class="fas fa-copy"></i></button>
-                </div>
-                <div class="stats-line">
-                    <span><i class="far fa-clock"></i> <span id="timerDisplay" class="stat-digit">--:--</span></span>
-                    <span><i class="fas fa-user-friends"></i> <span id="usersDisplay" class="stat-digit">0</span>/100</span>
-                </div>
+        <div class="brand-micro"><span>ZYRO</span>_CHAT</div>
+        <div id="nodeStatusArea" class="node-status-area hidden">
+            <div class="node-line">
+                <span class="node-label-light">NODE :</span>
+                <span id="activeNodeCodeDisplay" class="node-code-value">——</span>
+                <button id="copyNodeCodeBtn" class="icon-subtle" title="copy code"><i class="fas fa-copy"></i></button>
+            </div>
+            <div class="stats-line">
+                <span><i class="far fa-clock"></i> <span id="timerDisplay" class="stat-digit">--:--</span></span>
+                <span><i class="fas fa-user-friends"></i> <span id="usersDisplay" class="stat-digit">0</span>/100</span>
             </div>
         </div>
-        <div class="top-bar-right">
-            <button id="globalDisconnectBtn" class="disconnect-btn"><i class="fas fa-plug"></i> DISCONNECT</button>
-        </div>
+        <button id="globalDisconnectBtn" class="disconnect-btn"><i class="fas fa-power-off"></i> <span class="btn-text">DISCONNECT</span></button>
     </div>
 
     <div class="main-content" id="mainContent">
@@ -455,7 +485,7 @@
             <div class="pulse-dot"></div>
             <div class="await-heading"><i class="fas fa-waveform"></i> AWAITING CONNECTION</div>
             <div class="waiting-code-card">
-                <div style="font-size:0.7rem; color:#6f9fad;">NODE ACCESS CODE</div>
+                <div style="font-size:0.65rem; color:#6f9fad;">NODE ACCESS CODE</div>
                 <div id="waitingCodeSpan" class="waiting-code-number">——</div>
                 <div class="instruction-text">Provide node access code to the second party.</div>
                 <button id="waitingCopyLinkBtn" class="copy-waiting-link"><i class="fas fa-link"></i> COPY INVITE LINK</button>
@@ -479,7 +509,7 @@
 </div>
 
 <script>
-    // ---------- FULL FEATURE: TEXT + IMAGES WITH INSTANT DISPLAY ----------
+    // ---------- FULL FEATURE: TEXT + IMAGES WITH LAZY LOADING ----------
     let userId = null;
     let currentRoomCode = null;
     let eventSource = null;
@@ -513,6 +543,45 @@
     const usersDisplay = document.getElementById('usersDisplay');
     const globalDisconnectBtn = document.getElementById('globalDisconnectBtn');
 
+    // Lazy loading: queue for images to load after initial render
+    let lazyImageQueue = [];
+
+    function processLazyImages() {
+        if (lazyImageQueue.length === 0) return;
+        // Use requestIdleCallback if available, else setTimeout
+        const schedule = window.requestIdleCallback || setTimeout;
+        schedule(() => {
+            const imgElements = lazyImageQueue.slice();
+            lazyImageQueue = [];
+            imgElements.forEach(({ img, dataUrl }) => {
+                img.src = dataUrl;
+            });
+        }, { timeout: 100 });
+    }
+
+    function scheduleLazyImage(imgElement, dataUrl) {
+        lazyImageQueue.push({ img: imgElement, dataUrl: dataUrl });
+        processLazyImages();
+    }
+
+    function showLoader() {
+        let loader = document.getElementById('globalLoader');
+        if (!loader) {
+            loader = document.createElement('div');
+            loader.id = 'globalLoader';
+            loader.className = 'loader-overlay';
+            loader.innerHTML = '<div class="loader-spinner"><i class="fas fa-circle-notch fa-spin"></i></div>';
+            document.body.appendChild(loader);
+        } else {
+            loader.classList.remove('hidden');
+        }
+    }
+
+    function hideLoader() {
+        const loader = document.getElementById('globalLoader');
+        if (loader) loader.classList.add('hidden');
+    }
+
     function generateMessageId() {
         return `msg_${Date.now()}_${messageCounter++}_${Math.random().toString(36).substr(2, 6)}`;
     }
@@ -522,21 +591,42 @@
         return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]);
     }
 
-    // Display image message
+    // Display image message with lazy loading
     function appendImageMessage(senderId, imageDataUrl, isOwn = true, tempId = null) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `message-item ${isOwn ? 'own' : ''}`;
         const senderShort = isOwn ? 'YOU' : `NODE_${senderId.slice(-5)}`;
 
+        // Create placeholder initially
+        const imgPlaceholder = document.createElement('div');
+        imgPlaceholder.className = 'image-placeholder';
+        imgPlaceholder.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Loading...';
+
+        const containerDiv = document.createElement('div');
+        containerDiv.className = 'msg-body';
+        containerDiv.appendChild(imgPlaceholder);
+
         msgDiv.innerHTML = `
             <div class="msg-meta"><i class="fas fa-circle-user"></i> ${escapeHtml(senderShort)} <i class="fas fa-image" style="margin-left: 8px;"></i></div>
-            <div class="msg-body">
-                <img src="${imageDataUrl}" class="msg-image" alt="Shared image" onclick="viewFullImage('${imageDataUrl}')">
-            </div>
         `;
+        msgDiv.appendChild(containerDiv);
+
         if (tempId) msgDiv.setAttribute('data-temp', tempId);
         messagesContainer.appendChild(msgDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        // Create real image element and schedule lazy load
+        const realImg = document.createElement('img');
+        realImg.className = 'msg-image';
+        realImg.alt = 'Shared image';
+        realImg.onclick = () => viewFullImage(imageDataUrl);
+        // Replace placeholder with image after loading
+        realImg.onload = () => {
+            containerDiv.innerHTML = '';
+            containerDiv.appendChild(realImg);
+        };
+        // Schedule loading the actual image data
+        scheduleLazyImage(realImg, imageDataUrl);
         return msgDiv;
     }
 
@@ -552,7 +642,7 @@
         return msgDiv;
     }
 
-    // Universal message display
+    // Universal local message display
     function appendLocalMessage(content, isOwn = true, tempId = null, isImage = false) {
         const messageKey = `${content}_${Date.now()}`;
         sentMessagesCache.set(messageKey, {
@@ -585,22 +675,11 @@
         }
 
         const isOwn = (senderId === userId);
-        const senderShort = isOwn ? 'YOU' : `NODE_${senderId.slice(-5)}`;
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `message-item ${isOwn ? 'own' : ''}`;
-
         if (isImage) {
-            msgDiv.innerHTML = `
-                <div class="msg-meta"><i class="fas fa-circle-user"></i> ${escapeHtml(senderShort)} <i class="fas fa-image"></i></div>
-                <div class="msg-body">
-                    <img src="${escapeHtml(content)}" class="msg-image" alt="Shared image" onclick="viewFullImage('${escapeHtml(content)}')">
-                </div>
-            `;
+            appendImageMessage(senderId, content, isOwn);
         } else {
-            msgDiv.innerHTML = `<div class="msg-meta"><i class="fas fa-circle-user"></i> ${escapeHtml(senderShort)}</div><div class="msg-body">${escapeHtml(content)}</div>`;
+            appendTextMessage(senderId, content, isOwn);
         }
-        messagesContainer.appendChild(msgDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     // API calls
@@ -679,13 +758,17 @@
         try {
             const data = await apiCall(`/messages/${currentRoomCode}`, 'GET');
             messagesContainer.innerHTML = '';
-            if (data.messages) {
-                data.messages.forEach(msg => {
+            if (data.messages && data.messages.length) {
+                // Append messages one by one (they will be added to DOM)
+                for (const msg of data.messages) {
                     const isImage = msg.message && msg.message.startsWith('data:image');
                     if (!isImage || (isImage && !sentMessagesCache.has(msg.message))) {
                         appendForeignMessage(msg.from_id, msg.message, isImage);
                     }
-                });
+                }
+                // After all messages are added, process lazy images if any remain
+                // (they are already queued during appendImageMessage)
+                processLazyImages();
             }
         } catch(e) { console.warn(e); }
     }
@@ -708,7 +791,7 @@
         };
     }
 
-    // Send text message with instant display
+    // Send text message
     async function sendTextMessage() {
         const content = messageInput.value.trim();
         if (!content || !currentRoomCode || !userId) return;
@@ -734,11 +817,10 @@
         }
     }
 
-    // Send image with instant display
+    // Send image
     async function sendImage(file) {
         if (!file || !currentRoomCode || !userId) return;
 
-        // Check file size (max 5MB)
         if (file.size > 5 * 1024 * 1024) {
             alert('Image too large! Max 5MB');
             return;
@@ -746,15 +828,10 @@
 
         const tempId = generateMessageId();
 
-        // Convert to base64
         const reader = new FileReader();
         reader.onload = async (e) => {
             const base64Image = e.target.result;
-
-            // INSTANT DISPLAY - image appears immediately
             appendLocalMessage(base64Image, true, tempId, true);
-
-            // Background server sync
             try {
                 await apiCall('/send_message', 'POST', {
                     room_code: currentRoomCode,
@@ -763,9 +840,7 @@
                 });
             } catch(err) {
                 console.warn('Image send error:', err);
-                // Show user-friendly error
                 alert(`Failed to send image: ${err.message || 'Server error'}. The image was only shown locally.`);
-                // Optionally remove the local message
                 const lastMsg = messagesContainer.lastChild;
                 if (lastMsg && lastMsg.getAttribute('data-temp') === tempId) {
                     lastMsg.remove();
@@ -775,11 +850,10 @@
         reader.readAsDataURL(file);
     }
 
-    // Handle image selection
     function onImageSelected() {
         const file = imageFileInput.files[0];
         if (file) sendImage(file);
-        imageFileInput.value = ''; // Reset for next selection
+        imageFileInput.value = '';
     }
 
     async function handleCreateRoom() {
@@ -804,8 +878,19 @@
         } catch(err) { alert('create error: ' + err.message); }
     }
 
-    async function handleJoinRoom(code) {
-        if (!userId) try { await registerUser(); } catch(e) { return; }
+    async function handleJoinRoom(code, showLoaderFlag = true) {
+        if (!userId) {
+            try {
+                if (showLoaderFlag) showLoader();
+                await registerUser();
+                if (showLoaderFlag) hideLoader();
+            } catch(e) {
+                if (showLoaderFlag) hideLoader();
+                alert('Registration failed');
+                return;
+            }
+        }
+        if (showLoaderFlag) showLoader();
         try {
             const joinData = await apiCall('/join_room', 'POST', { room_code: code, user_id: userId });
             if (joinData.success || joinData.message === 'Joined' || joinData.message === 'Already in room') {
@@ -825,8 +910,19 @@
                 await loadMessageHistory();
                 startMessageStream(currentRoomCode);
                 startRoomPolling();
-            } else alert('Join failed: room might be full');
-        } catch(err) { alert('join error: ' + err.message); }
+                hideLoader();
+            } else {
+                throw new Error('Join failed: room might be full');
+            }
+        } catch(err) {
+            console.error(err);
+            alert('join error: ' + err.message);
+            joinCreateView.classList.remove('hidden');
+            waitingView.classList.add('hidden');
+            chatView.classList.add('hidden');
+            nodeStatusArea.classList.add('hidden');
+            hideLoader();
+        }
     }
 
     async function disconnectAndReset(optionalMsg) {
@@ -853,7 +949,6 @@
         if (optionalMsg) alert(optionalMsg);
     }
 
-    // Full image viewer
     window.viewFullImage = function(imageUrl) {
         const modal = document.createElement('div');
         modal.className = 'image-modal';
@@ -875,15 +970,14 @@
         const params = new URLSearchParams(window.location.search);
         const code = params.get('code');
         if (code && code.length === 8 && /^[A-Z0-9]+$/.test(code)) {
-            if (!userId) try { await registerUser(); } catch(e) { return; }
-            await handleJoinRoom(code);
+            await handleJoinRoom(code, true);
             history.replaceState(null, '', window.location.pathname);
         }
     }
 
     // Event listeners
     createRoomBtn.addEventListener('click', async () => { if (!userId) await registerUser(); handleCreateRoom(); });
-    joinRoomBtn.addEventListener('click', async () => { if (joinRoomBtn.disabled) return; let code = roomCodeInput.value.trim().toUpperCase(); if (!code) return alert('enter node code'); if (!userId) await registerUser(); handleJoinRoom(code); });
+    joinRoomBtn.addEventListener('click', async () => { if (joinRoomBtn.disabled) return; let code = roomCodeInput.value.trim().toUpperCase(); if (!code) return alert('enter node code'); if (!userId) await registerUser(); handleJoinRoom(code, true); });
     sendMsgBtn.addEventListener('click', sendTextMessage);
     messageInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendTextMessage(); });
     imageAttachBtn.addEventListener('click', () => imageFileInput.click());
